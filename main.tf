@@ -5,8 +5,8 @@ provider "aws" {
 
 resource "aws_instance" "app_server" {
   ami           = "ami-04b70fa74e45c3917"
-  instance_type = "t2.micro"
+  instance_type = var.ec2_instance_type
   tags = {
-    Name = "MyTerraformInstance"
+    Name = var.instance_name
   }
 }
